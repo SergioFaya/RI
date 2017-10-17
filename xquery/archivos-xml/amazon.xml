@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<amazon>
+
+ <libro año="1994">
+	<titulo>Fundamentos de Bases de Datos</titulo>
+	<autor>
+            <nombre> Abraham</nombre>
+	    <apellido> Silberschatz</apellido>
+	</autor>
+	<autor>
+            <nombre> Henry</nombre>
+	    <apellido> Korth</apellido>
+	</autor>
+	<editorial> McGraw-Hill </editorial>
+	<precio> 75 </precio>
+	
+</libro>
+
+<libro año="1992">
+	<titulo>Advanced Programming in the UNIX Environment</titulo>
+	<autor>
+            <nombre> William </nombre>
+  	       <apellido> Stevens</apellido>
+
+	</autor>
+	<autor>
+       <nombre>William</nombre> 
+       <apellido>Gordon</apellido> 
+  </autor>
+
+	<editorial> Addison-Wesley </editorial>
+	<precio> 60 </precio>
+</libro>
+
+<libro año="2000">
+	<titulo>Data on the Web</titulo>
+	<autor>
+            <nombre> Serge</nombre>
+	    <apellido> Abiteboul</apellido>
+	</autor>
+	<autor>
+            <nombre> Peter </nombre>
+	    <apellido> Buneman </apellido>
+	</autor>
+	<autor>
+            <nombre> Dan </nombre>
+	    <apellido> Suciu </apellido>
+	</autor>
+	<editorial> Morgan Kaufmann </editorial>
+	<precio> 90 </precio>
+</libro>
+
+<libro año="2001">
+	<titulo>The XML Handbook</titulo>
+	<autor>
+            <nombre> C.</nombre>
+	    <apellido> Goldfarb</apellido>
+	</autor>
+	<autor>
+            <nombre> P. </nombre>
+	    <apellido> Buneman </apellido>
+	</autor>
+	
+	<editorial> Prentice-Hall </editorial>
+	
+</libro>	    
+
+<libro año="2001">
+	<titulo>The XML Handbook</titulo>
+	<autor>
+            <nombre> C.</nombre>
+	    <apellido> Goldfarb</apellido>
+	</autor>
+	<autor>
+            <nombre> P. </nombre>
+	    <apellido> Buneman </apellido>
+	</autor>
+	
+	<editorial> Prentice-Hall </editorial>
+	
+</libro>	    
+
+<libro año="2006">
+	<titulo>No me hagas pensar</titulo>
+	<autor>
+            <nombre> Steve </nombre>
+	    <apellido> Krug</apellido>
+	</autor>
+	
+	<editorial> Prentice-Hall </editorial>
+	
+</libro>	    
+
+
+<libro año="2003">
+	<titulo>Xquery 1.0: An XML Query Language</titulo>
+	<editor>
+            <nombre> William </nombre>
+	    <apellido> Gordon </apellido>
+	</editor>
+
+	<editorial> Morgan Kaufmann </editorial>
+	<precio> 100 </precio>
+</libro>
+
+<libro año="2005">
+	<titulo>Xquery from the Experts</titulo>
+	<autor>
+            <nombre> David</nombre>
+	    <apellido> Chamberlin</apellido>
+	</autor>
+	<autor>
+            <nombre> D. </nombre>
+	    <apellido> Draper </apellido>
+	</autor>
+        <editor>
+            <nombre> Morgan </nombre>
+            <apellido> kellerman </apellido>
+         </editor>
+	<editorial> Addison-Wesley </editorial>
+	<precio>110</precio>
+</libro>
+
+
+
+
+</amazon>
+

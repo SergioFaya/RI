@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+
+<revisores>
+
+ <revision>
+	<titulo>Fundamentos de Bases de Datos</titulo>
+	<nota> 5 </nota>
+	<comentarios> Es un libro de texto básico </comentarios>
+         
+ </revision>
+ <revision>
+	<titulo>Data on the Web</titulo>
+	<nota> 7 </nota>
+	<comentarios> Libro para un curso avanzado de bases de datos </comentarios>
+         
+ </revision>
+ <revision>
+	<titulo>Advanced Programming in the UNIX Environment</titulo>
+	<nota> 7 </nota>
+	<comentarios> Buen libro para programar en Unix</comentarios>
+         
+ </revision>
+
+</revisores>

@@ -1,0 +1,157 @@
+<bib>
+    <libro año="1994">
+        <titulo>Fundamentos de Bases de Datos</titulo>
+        <autor>
+            <nombre>Abraham</nombre>
+            <apellido>Silberschatz</apellido>
+            <direccion>
+                <calle>Kensigton </calle>
+                <numero>12 </numero>
+                <telefono>
+                    <fijo> 89-3456-345-21 </fijo>
+                    <movil> 669234567 </movil>
+                </telefono>
+            </direccion>
+            <direccion>
+                <calle>Park Avenue </calle>
+                <numero>12 </numero>
+                <telefono>
+                    <fijo> 89-3456-345-21 </fijo>
+                </telefono>
+            </direccion>
+            <email> silbers@hotmail.com </email>
+        </autor>
+        <autor>
+		    <nombre>Henry</nombre>
+            <apellido>Korth</apellido>
+            <direccion>
+                <calle>Kensigton </calle>
+                <numero>12 </numero>
+            </direccion>
+        </autor>
+		<editor>
+            <nombre>Peter</nombre>
+            <apellido>Sellerman</apellido>
+        </editor>
+        <editorial>McGraw-Hill</editorial>
+        <precio> 80 </precio>
+    </libro>
+    <libro año="1992">
+        <titulo>Advanced Programming in the UNIX Environment</titulo>
+        <autor>
+            <nombre>William</nombre>
+            <apellido>Stevens</apellido>
+            <email> stevens@hotmail.com </email>
+        </autor>
+        <autor>
+            <nombre>Brian</nombre>
+            <apellido>Gordon</apellido>
+            <email>brian@gmail.com</email>
+        </autor>
+        <autor>
+            <nombre>Brian</nombre>
+            <apellido>Rubens</apellido>
+            <email>brianrb@gmail.com</email>
+        </autor>
+          <autor>
+            <nombre>Rose</nombre>
+            <apellido>Pendelton</apellido>
+            <email>rousp@gmail.com</email>
+        </autor>
+        <editorial>Addison-Wesley</editorial>
+        <precio> 65.90 </precio>
+    </libro>
+    <libro año="2000">
+        <titulo>Data on the Web</titulo>
+        <autor>
+            <nombre>Serge</nombre>
+            <apellido>Abiteboul</apellido>
+        </autor>
+        <autor>
+            <nombre>Peter</nombre>
+            <apellido>Buneman</apellido>
+        </autor>
+        <autor>
+            <nombre>Dan</nombre>
+            <apellido>Suciu</apellido>
+        </autor>
+        <editorial>Morgan Kaufmann</editorial>
+        <precio> 100 </precio>
+    </libro>
+    <libro año="2001">
+        <titulo>The XML Handbook</titulo>
+        <autor>
+            <nombre>C.</nombre>
+            <apellido>Goldfarb</apellido>
+        </autor>
+        <autor>
+            <nombre>P.</nombre>
+            <apellido>Buneman</apellido>
+        </autor>
+        <editorial>Prentice-Hall</editorial>
+    </libro>
+    <libro año="2001">
+        <titulo>The XML Handbook</titulo>
+        <autor>
+            <nombre>C.</nombre>
+            <apellido>Goldfarb</apellido>
+        </autor>
+        <autor>
+            <nombre>P.</nombre>
+            <apellido>Buneman</apellido>
+        </autor>
+		<editor>
+            <nombre>Juliette</nombre>
+            <apellido>Peterson</apellido>
+        </editor>
+        <editorial>Prentice-Hall</editorial>
+    </libro>
+    <libro año="2006">
+        <titulo>No me hagas pensar</titulo>
+        <autor>
+            <nombre>Steve</nombre>
+            <apellido>Krug</apellido>
+        </autor>
+        <editorial>Prentice-Hall</editorial>
+        <precio>400</precio>
+    </libro>
+    <libro año="2003">
+        <titulo>Xquery 1.0</titulo>
+        <autor>
+            <nombre>William</nombre>
+            <apellido>Gordon</apellido>
+            <email>WGordon@hotmail.com</email>
+        </autor>
+		<editor>
+            <nombre>Peter</nombre>
+            <apellido>Smith</apellido>
+        </editor>
+        <editorial>Morgan Kaufmann</editorial>
+        <precio> 100 </precio>
+    </libro>
+    <libro año="2005">
+        <titulo>Xquery from the Experts</titulo>
+        <autor>
+            <nombre>David</nombre>
+            <apellido>Chamberlin</apellido>
+        </autor>
+        <autor>
+            <nombre>D.</nombre>
+            <apellido>Draper</apellido>
+        </autor>
+        <editor>
+            <nombre>Morgan</nombre>
+            <apellido>kellerman</apellido>
+        </editor>
+        <editorial>Addison-Wesley</editorial>
+        <precio>100</precio>
+    </libro>
+	 <libro año="2012">
+        <titulo>XQuery 1.0: An XML Query Language</titulo>
+         <editor>
+            <nombre>Rebeca</nombre>
+            <apellido>Gutierrez</apellido>
+        </editor>
+        <editorial>W3C</editorial>
+    </libro>
+</bib>
