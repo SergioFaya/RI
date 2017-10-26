@@ -1,0 +1,8 @@
+curl servicio web rest(linux )
+wc, head, tail, grep, cut, sort
+añadir al path el archivo ununix
+
+(total de tweets)
+.\UnxUtils\usr\local\wbin\wc -l .\2008-Feb-02-04.json
+
+.\UnxUtils\usr\local\wbin\grep.exe \"lang\":\"en\" 2008-Feb-02-04.json > 2008-Feb-02-04-EN.json
