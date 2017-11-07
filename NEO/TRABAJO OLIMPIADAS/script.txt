@@ -1,0 +1,142 @@
+﻿CREATE (Usain_Bolt:Deportista { nombre:"Usain Bolt", año_nacimiento: " 1986", pais: "Jamaica" }) 
+CREATE (Mireia_Belmonte:Deportista { nombre:"Mireia Belmonte", año_nacimiento: " 1990", pais: "Spain" }) 
+CREATE (Pau_Gasol:Deportista { nombre:"Pau Gasol", año_nacimiento: " 1980", pais: "Spain" }) 
+CREATE (Marthe_Koala:Deportista { nombre:"Marthe Koala", año_nacimiento: " 1994", pais: "Burkina Faso" }) 
+CREATE (Maria_Bernabeu:Deportista { nombre:"Maria Bernabeu", año_nacimiento: " 1988", pais: "Spain" }) 
+CREATE (Ona_Carbonell:Deportista { nombre:"Ona Carbonell", año_nacimiento: " 1990", pais: "Spain" }) 
+CREATE (Gemma_Mengual:Deportista { nombre:"Gemma Mengual", año_nacimiento: " 1977", pais: "Spain" }) 
+CREATE (Teddy_Riner:Deportista { nombre:"Teddy Riner", año_nacimiento: " 1989", pais: "France" }) 
+CREATE (Mehdy_Metella:Deportista { nombre:"Mehdy Metella", año_nacimiento: " 1992", pais: "France" }) 
+CREATE (Fabien_Gilot:Deportista { nombre:"Fabien Gilot", año_nacimiento: " 1984", pais: "France" }) 
+CREATE (Florent_Manaudou:Deportista { nombre:"Florent Manaudou", año_nacimiento: " 1990", pais: "France" }) 
+CREATE (Jeremy_Stravius:Deportista { nombre:"Jeremy Stravius", año_nacimiento: " 1988", pais: "France" }) 
+CREATE (Naiara_Egozkue:Deportista { nombre:"Naiara Egozkue", año_nacimiento: " 1983", pais: "Spain" }) 
+CREATE (Jesper_Noddesbo:Deportista { nombre:"Jesper Noddesbo", año_nacimiento: " 1980", pais: "Denmark" }) 
+CREATE (Simone_Biles:Deportista { nombre:"Simone Biles", año_nacimiento: " 1997", pais: "EEUU" }) 
+CREATE (Aliya_Mustafina:Deportista { nombre:"Aliya Mustafina", año_nacimiento: " 1994", pais: "Rusia" }) 
+CREATE (David_Beliavski:Deportista { nombre:"David Beliavski", año_nacimiento: " 1992", pais: "Rusia" }) 
+CREATE (Robel_Habte:Deportista { nombre:"Robel Habte ", año_nacimiento: " 1992", pais: "Etiopia" }) 
+CREATE (Rafael_Nadal:Deportista { nombre:"Rafael Nadal", año_nacimiento: " 1986", pais: "Spain" }) 
+CREATE (Marc_Lopez:Deportista { nombre:"Marc Lopez", año_nacimiento: " 1982", pais: "Spain" }) 
+
+CREATE (Natacion:Deporte {nombre:"Natacion"})
+CREATE (Judo:Deporte {nombre:"Judo"})
+CREATE (Balonmano:Deporte {nombre:"Balonmano"})
+CREATE (Atletismo:Deporte {nombre:"Atletismo"})
+CREATE (Tenis:Deporte {nombre:"Tenis"})
+CREATE (Baloncesto:Deporte {nombre:"Baloncesto"})
+CREATE (Gimnasia:Deporte {nombre:"Gimnasia"})
+
+CREATE (Toni_Nadal:Entrenador {nombre:"Toni Nadal"})
+CREATE (Pierre_Henry:Entrenador {nombre:"Pierre Henry"})
+CREATE (Ana_Gonzalez:Entrenador {nombre:"Ana Gonzalez"})
+CREATE (Jorge_Duenas:Entrenador {nombre:"Jorge DueÑas"})
+CREATE (Vicente_DelBosque:Entrenador {nombre:"Vicente Del Bosque"})
+CREATE (Henrik_Jansen:Entrenador {nombre:"Henrik Jansen"})
+CREATE (Will_Smith:Entrenador {nombre:"Will Smith"})
+CREATE (Vladimir_Putin:Entrenador {nombre:"Vladimir Putin"})
+CREATE (Miercole_Kanguro:Entrenador {nombre:"Miercole Kanguro"})
+CREATE (Mariola_Serra:Entrenador {nombre:"Mariola Serra"})
+CREATE (Jigoro_Kano:Entrenador {nombre:"Jigoro Kano"})
+
+CREATE (JJOO:Olimpiada {ciudad: "Rio de Janeiro", año: "2016"})
+
+CREATE 
+    (Usain_Bolt) - [:COMPITE_EN] -> (Atletismo),
+    (Mireia_Belmonte) - [:COMPITE_EN] -> (Natacion),
+    (Pau_Gasol) - [:COMPITE_EN] -> (Baloncesto),
+    (Marthe_Koala) - [:COMPITE_EN] -> (Atletismo),
+    (Maria_Bernabeu) - [:COMPITE_EN] -> (Judo),
+    (Ona_Carbonell) - [:COMPITE_EN] -> (Natacion),
+    (Gemma_Mengual) - [:COMPITE_EN] -> (Natacion),
+    (Teddy_Riner) - [:COMPITE_EN] -> (Judo),
+    (Mehdy_Metella) - [:COMPITE_EN] -> (Natacion),
+    (Fabien_Gilot) - [:COMPITE_EN] -> (Natacion),
+    (Florent_Manaudou) - [:COMPITE_EN] -> (Natacion),
+    (Jeremy_Stravius) - [:COMPITE_EN] -> (Natacion),
+    (Naiara_Egozkue) - [:COMPITE_EN] -> (Balonmano),
+    (Jesper_Noddesbo) - [:COMPITE_EN] -> (Balonmano),
+    (Simone_Biles) - [:COMPITE_EN] -> (Gimnasia),
+    (Aliya_Mustafina) - [:COMPITE_EN] -> (Gimnasia),
+    (David_Beliavski) - [:COMPITE_EN] -> (Gimnasia),
+    (Robel_Habte) - [:COMPITE_EN] -> (Natacion),
+    (Rafael_Nadal) - [:COMPITE_EN] -> (Tenis),
+    (Marc_Lopez) - [:COMPITE_EN] -> (Tenis)
+    
+CREATE
+    (JJOO) - [:CONSTA_DE] -> (Tenis),
+    (JJOO) - [:CONSTA_DE] -> (Atletismo),
+    (JJOO) - [:CONSTA_DE] -> (Natacion),
+    (JJOO) - [:CONSTA_DE] -> (Baloncesto),
+    (JJOO) - [:CONSTA_DE] -> (Balonmano),
+    (JJOO) - [:CONSTA_DE] -> (Gimnasia),
+    (JJOO) - [:CONSTA_DE] -> (Judo)
+    
+
+CREATE
+    (Toni_Nadal) - [:ENTRENA_A] -> (Rafael_Nadal),
+    (Toni_Nadal) - [:ENTRENA_A] -> (Marc_Lopez),
+    (Miercole_Kanguro) - [:ENTRENA_A] -> (Marthe_Koala),
+    (Will_Smith) - [:ENTRENA_A] -> (Simone_Biles),
+    (Will_Smith) - [:ENTRENA_A] -> (Usain_Bolt),
+    (Henrik_Jansen) - [:ENTRENA_A] -> (Jesper_Noddesbo),
+    (Vladimir_Putin) - [:ENTRENA_A] -> (Aliya_Mustafina),
+    (Vladimir_Putin) - [:ENTRENA_A] -> (David_Beliavski),
+    (Mariola_Serra) - [:ENTRENA_A] -> (Gemma_Mengual),
+    (Mariola_Serra) - [:ENTRENA_A] -> (Ona_Carbonell),
+    (Jigoro_Kano) - [:ENTRENA_A] -> (Teddy_Riner),
+    (Jigoro_Kano) - [:ENTRENA_A] -> (Maria_Bernabeu),
+    (Pierre_Henry) - [:ENTRENA_A] -> (Jeremy_Stravius),
+    (Pierre_Henry) - [:ENTRENA_A] -> (Fabien_Gilot),
+    (Pierre_Henry) - [:ENTRENA_A] -> (Mehdy_Metella),
+    (Pierre_Henry) - [:ENTRENA_A] -> (Florent_Manaudou),
+    (Vicente_DelBosque) - [:ENTRENA_A] -> (Pau_Gasol),
+    (Vicente_DelBosque) - [:ENTRENA_A] -> (Mireia_Belmonte),
+    (Jorge_Duenas) - [:ENTRENA_A] -> (Naiara_Egozkue)    
+    
+
+CREATE
+    (Rafael_Nadal) - [:SE_CONCENTRA_CON] -> (Marc_Lopez),
+    (Usain_Bolt) - [:SE_CONCENTRA_CON] -> (Marthe_Koala),
+    (Naiara_Egozkue) - [:SE_CONCENTRA_CON] -> (Jesper_Noddesbo),
+    (Ona_Carbonell) - [:SE_CONCENTRA_CON] -> (Gemma_Mengual),
+    (Mireia_Belmonte) - [:SE_CONCENTRA_CON] -> (Gemma_Mengual),
+    (Maria_Bernabeu) - [:SE_CONCENTRA_CON] -> (Pau_Gasol),
+    (Robel_Habte) - [:SE_CONCENTRA_CON] -> (Aliya_Mustafina),
+    (Mehdy_Metella) - [:SE_CONCENTRA_CON] -> (Mireia_Belmonte),
+	(Jeremy_Stravius) - [:SE_CONCENTRA_CON] -> (Florent_Manaudou),
+	(Fabien_Gilot) - [:SE_CONCENTRA_CON] -> (Jeremy_Stravius),
+	(Florent_Manaudou) - [:SE_CONCENTRA_CON] -> (Teddy_Riner),
+    (Rafael_Nadal) <- [:SE_CONCENTRA_CON] - (Marc_Lopez),
+    (Usain_Bolt) <- [:SE_CONCENTRA_CON] - (Marthe_Koala),
+    (Naiara_Egozkue) <- [:SE_CONCENTRA_CON] - (Jesper_Noddesbo),
+    (Ona_Carbonell) <- [:SE_CONCENTRA_CON] - (Gemma_Mengual),
+    (Mireia_Belmonte) <- [:SE_CONCENTRA_CON] - (Gemma_Mengual),
+    (Maria_Bernabeu) <- [:SE_CONCENTRA_CON] - (Pau_Gasol),
+    (Robel_Habte) <- [:SE_CONCENTRA_CON] - (Aliya_Mustafina),
+    (Mehdy_Metella) <- [:SE_CONCENTRA_CON] - (Mireia_Belmonte),
+	(Jeremy_Stravius) <- [:SE_CONCENTRA_CON] - (Florent_Manaudou),
+	(Fabien_Gilot) <- [:SE_CONCENTRA_CON] - (Jeremy_Stravius),
+	(Florent_Manaudou) <- [:SE_CONCENTRA_CON] - (Teddy_Riner)
+	
+CREATE
+	(Usain_Bolt) - [:GANO {medalla: "oro", categoria: "100m lisos"}] -> (Atletismo),
+	(Mireia_Belmonte) - [:GANO {medalla: "oro", categoria: "200m mariposa"}] -> (Natacion),
+	(Pau_Gasol) - [:GANO {medalla: "bronce", categoria: "masculino"}] -> (Baloncesto),
+	(Teddy_Riner) - [:GANO {medalla: "oro", categoria: "+100kg"}] -> (Judo),
+	(Mehdy_Metella) - [:GANO {medalla: "plata", categoria: "4x100m relevos"}] -> (Natacion),
+	(Fabien_Gilot) - [:GANO {medalla: "plata", categoria: "4x100m relevos"}] -> (Natacion),
+	(Florent_Manaudou) - [:GANO {medalla: "plata", categoria: "4x100m relevos"}] -> (Natacion),
+	(Jeremy_Stravius) - [:GANO {medalla: "plata", categoria: "4x100m relevos"}] -> (Natacion),
+	(Jesper_Noddesbo) - [:GANO {medalla: "oro", categoria: "masculino"}] -> (Balonmano),
+	(Simone_Biles) - [:GANO {medalla: "oro", categoria: "suelo"}] -> (Gimnasia),
+	(Aliya_Mustafina) - [:GANO {medalla: "oro", categoria: "barras asimetricas"}] -> (Gimnasia),
+	(David_Beliavski) - [:GANO {medalla: "bronce", categoria: "barras paralelas"}] -> (Gimnasia),
+	(Aliya_Mustafina) - [:GANO {medalla: "bronce", categoria: "final individual"}] -> (Gimnasia)
+	
+CREATE
+	(Rafael_Nadal) - [:ES_COMPAÑERO_DE] -> (Marc_Lopez),
+	(Gemma_Mengual) - [:ES_COMPAÑERO_DE] -> (Ona_Carbonell),
+	(Marc_Lopez) - [:ES_COMPAÑERO_DE] -> (Rafael_Nadal),
+	(Ona_Carbonell) - [:ES_COMPAÑERO_DE] -> (Gemma_Mengual)
+    
