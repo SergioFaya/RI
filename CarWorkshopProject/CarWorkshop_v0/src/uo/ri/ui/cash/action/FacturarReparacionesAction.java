@@ -7,8 +7,9 @@ import java.util.List;
 
 import alb.util.console.Console;
 import alb.util.menu.Action;
-import uo.ri.business.impl.cash.CreateInvoiceFor;
+import uo.ri.business.CashService;
 import uo.ri.common.BusinessException;
+import uo.ri.conf.ServicesFactory;
 
 public class FacturarReparacionesAction implements Action {
 
@@ -23,7 +24,8 @@ public class FacturarReparacionesAction implements Action {
 			Long id = Console.readLong("ID de averia");
 			idsAveria.add(id);
 		} while ( masAverias() );
-		HashMap<String, Object> map = (HashMap<String, Object>) new CreateInvoiceFor(idsAveria).execute();
+		CashService cashService =ServicesFactory.getCashService();
+		HashMap<String, Object> map = (HashMap<String, Object>) cashService.createInvoiceFor(idsAveria);
 		mostrarFactura((long)map.get("numeroFactura"), (Date) map.get("fechaFactura"),
 				(double)map.get("totalFactura"), (double)map.get("iva"), (double)map.get("importe"));
 	}

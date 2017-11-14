@@ -8,11 +8,13 @@ import uo.ri.business.impl.cash.CreateInvoiceFor;
 import uo.ri.business.impl.cash.InvoiceFinder;
 import uo.ri.business.impl.cash.SettleInvoice;
 import uo.ri.common.BusinessException;
+import uo.ri.conf.ServicesFactory;
 
 public class CashServiceImpl implements CashService {
 
+	
 	public CashServiceImpl() {
-
+		
 	}
 
 	@Override
