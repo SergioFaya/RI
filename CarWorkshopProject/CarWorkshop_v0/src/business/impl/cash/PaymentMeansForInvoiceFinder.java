@@ -1,4 +1,4 @@
-package business.cash;
+package business.impl.cash;
 
 public class PaymentMeansForInvoiceFinder {
 

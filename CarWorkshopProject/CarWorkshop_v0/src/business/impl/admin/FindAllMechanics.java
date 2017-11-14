@@ -1,4 +1,4 @@
-package business.admin;
+package business.impl.admin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

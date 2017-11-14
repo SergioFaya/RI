@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import alb.util.console.Console;
 import alb.util.jdbc.Jdbc;
 import alb.util.menu.Action;
-import business.admin.AddMechanic;
+import business.impl.admin.AddMechanic;
 import uo.ri.common.BusinessException;
 
 public class AddMechanicAction implements Action {

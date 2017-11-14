@@ -1,4 +1,4 @@
-package business.cash;
+package business.impl.cash;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

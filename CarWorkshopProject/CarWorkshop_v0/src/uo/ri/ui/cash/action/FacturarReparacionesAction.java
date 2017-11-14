@@ -7,7 +7,7 @@ import java.util.List;
 
 import alb.util.console.Console;
 import alb.util.menu.Action;
-import business.cash.CreateInvoiceFor;
+import business.impl.cash.CreateInvoiceFor;
 import uo.ri.common.BusinessException;
 
 public class FacturarReparacionesAction implements Action {

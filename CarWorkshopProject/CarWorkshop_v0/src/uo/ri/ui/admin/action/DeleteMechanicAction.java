@@ -9,7 +9,7 @@ import uo.ri.common.BusinessException;
 import alb.util.console.Console;
 import alb.util.jdbc.Jdbc;
 import alb.util.menu.Action;
-import business.admin.DeleteMechanic;
+import business.impl.admin.DeleteMechanic;
 
 public class DeleteMechanicAction implements Action {
 
