@@ -1,13 +1,13 @@
-package business.impl;
+package uo.ri.business.impl;
 
 import java.util.List;
 import java.util.Map;
 
-import business.AdminService;
-import business.impl.admin.AddMechanic;
-import business.impl.admin.DeleteMechanic;
-import business.impl.admin.FindAllMechanics;
-import business.impl.admin.UpdateMechanic;
+import uo.ri.business.AdminService;
+import uo.ri.business.impl.admin.AddMechanic;
+import uo.ri.business.impl.admin.DeleteMechanic;
+import uo.ri.business.impl.admin.FindAllMechanics;
+import uo.ri.business.impl.admin.UpdateMechanic;
 
 public class AdminServiceImpl implements AdminService {
 

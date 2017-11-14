@@ -1,4 +1,4 @@
-package business;
+package uo.ri.business;
 
 import java.util.List;
 import java.util.Map;

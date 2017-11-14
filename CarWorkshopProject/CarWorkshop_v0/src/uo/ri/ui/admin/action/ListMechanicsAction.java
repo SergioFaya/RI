@@ -4,7 +4,7 @@ import java.util.Map;
 
 import alb.util.console.Console;
 import alb.util.menu.Action;
-import business.impl.admin.FindAllMechanics;
+import uo.ri.business.impl.admin.FindAllMechanics;
 import uo.ri.common.BusinessException;
 
 public class ListMechanicsAction implements Action {

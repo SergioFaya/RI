@@ -1,4 +1,4 @@
-package business.impl.admin;
+package uo.ri.business.impl.admin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import alb.util.console.Console;
 import alb.util.jdbc.Jdbc;
 
 public class FindAllMechanics {

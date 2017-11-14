@@ -1,26 +1,24 @@
-package business.impl.admin;
+package uo.ri.business.impl.admin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import alb.util.console.Console;
 import alb.util.jdbc.Jdbc;
 
-public class UpdateMechanic {
+public class AddMechanic {
 
-	private static String SQL = "update TMecanicos " + "set nombre = ?, apellidos = ? " + "where id = ?";
-
-	private long id;
+	private static String SQL = "insert into TMecanicos(nombre, apellidos) values (?, ?)";
 	private String nombre;
 	private String apellidos;
-
-	public UpdateMechanic(long id, String nombre, String apellidos) {
-		this.id = id;
+	
+	public AddMechanic(String nombre, String apellidos) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 	}
-
+	
 	public void execute() {
 		// Procesar
 		Connection c = null;
@@ -29,19 +27,23 @@ public class UpdateMechanic {
 
 		try {
 			c = Jdbc.getConnection();
-
+			
 			pst = c.prepareStatement(SQL);
 			pst.setString(1, nombre);
 			pst.setString(2, apellidos);
-			pst.setLong(3, id);
-
+			
 			pst.executeUpdate();
-
+			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
-		} finally {
+		}
+		finally {
 			Jdbc.close(rs, pst, c);
 		}
+		
+		// Mostrar resultado
+		Console.println("Nuevo mecánico añadido");
 
 	}
+
 }
