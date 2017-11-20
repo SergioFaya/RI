@@ -13,32 +13,12 @@ import alb.util.date.DateUtil;
 import alb.util.jdbc.Jdbc;
 import alb.util.math.Round;
 import uo.ri.common.BusinessException;
+import uo.ri.conf.properties.Queries;
+
+
 
 public class CreateInvoiceFor {
 
-	private static final String SQL_IMPORTE_REPUESTOS = "select sum(s.cantidad * r.precio) "
-			+ "	from  TSustituciones s, TRepuestos r " + "	where s.repuesto_id = r.id "
-			+ "		and s.intervencion_averia_id = ?";
-
-	private static final String SQL_IMPORTE_MANO_OBRA = "select sum(i.minutos * tv.precioHora / 60) "
-			+ "	from TAverias a, TIntervenciones i, TVehiculos v, TTiposVehiculo tv" + "	where i.averia_id = a.id "
-			+ "		and a.vehiculo_id = v.id" + "		and v.tipo_id = tv.id" + "		and a.id = ?"
-			+ "		and a.status = 'TERMINADA'";
-
-	private static final String SQL_UPDATE_IMPORTE_AVERIA = "update TAverias set importe = ? where id = ?";
-
-	private static final String SQL_ULTIMO_NUMERO_FACTURA = "select max(numero) from TFacturas";
-
-	private static final String SQL_INSERTAR_FACTURA = "insert into TFacturas(numero, fecha, iva, importe, status) "
-			+ "	values(?, ?, ?, ?, ?)";
-
-	private static final String SQL_VINCULAR_AVERIA_FACTURA = "update TAverias set factura_id = ? where id = ?";
-
-	private static final String SQL_ACTUALIZAR_ESTADO_AVERIA = "update TAverias set status = ? where id = ?";
-
-	private static final String SQL_VERIFICAR_ESTADO_AVERIA = "select status from TAverias where id = ?";
-
-	private static final String SQL_RECUPERAR_CLAVE_GENERADA = "select id from TFacturas where numero = ?";
 
 	private Connection connection;
 
@@ -100,7 +80,7 @@ public class CreateInvoiceFor {
 		ResultSet rs = null;
 
 		try {
-			pst = connection.prepareStatement(SQL_VERIFICAR_ESTADO_AVERIA);
+			pst = connection.prepareStatement(Queries.SQL_VERIFICAR_ESTADO_AVERIA);
 
 			for (Long idAveria : idsAveria) {
 				pst.setLong(1, idAveria);
@@ -127,7 +107,7 @@ public class CreateInvoiceFor {
 
 		PreparedStatement pst = null;
 		try {
-			pst = connection.prepareStatement(SQL_ACTUALIZAR_ESTADO_AVERIA);
+			pst = connection.prepareStatement(Queries.SQL_ACTUALIZAR_ESTADO_AVERIA);
 
 			for (Long idAveria : idsAveria) {
 				pst.setString(1, status);
@@ -144,7 +124,7 @@ private void vincularAveriasConFactura(long idFactura, List<Long> idsAveria) thr
 		
 		PreparedStatement pst = null;
 		try {
-			pst = connection.prepareStatement(SQL_VINCULAR_AVERIA_FACTURA);
+			pst = connection.prepareStatement(Queries.SQL_VINCULAR_AVERIA_FACTURA);
 
 			for (Long idAveria : idsAveria) {
 				pst.setLong(1, idFactura);
@@ -163,7 +143,7 @@ private void vincularAveriasConFactura(long idFactura, List<Long> idsAveria) thr
 		PreparedStatement pst = null;
 
 		try {
-			pst = connection.prepareStatement(SQL_INSERTAR_FACTURA);
+			pst = connection.prepareStatement(Queries.SQL_INSERTAR_FACTURA);
 			pst.setLong(1, numeroFactura);
 			pst.setDate(2, new java.sql.Date(fechaFactura.getTime()));
 			pst.setDouble(3, iva);
@@ -184,7 +164,7 @@ private void vincularAveriasConFactura(long idFactura, List<Long> idsAveria) thr
 		ResultSet rs = null;
 
 		try {
-			pst = connection.prepareStatement(SQL_RECUPERAR_CLAVE_GENERADA);
+			pst = connection.prepareStatement(Queries.SQL_RECUPERAR_CLAVE_GENERADA);
 			pst.setLong(1, numeroFactura);
 			rs = pst.executeQuery();
 			rs.next();
@@ -201,7 +181,7 @@ private void vincularAveriasConFactura(long idFactura, List<Long> idsAveria) thr
 		ResultSet rs = null;
 
 		try {
-			pst = connection.prepareStatement(SQL_ULTIMO_NUMERO_FACTURA);
+			pst = connection.prepareStatement(Queries.SQL_ULTIMO_NUMERO_FACTURA);
 			rs = pst.executeQuery();
 			
 			if (rs.next()) {
@@ -238,7 +218,7 @@ private void vincularAveriasConFactura(long idFactura, List<Long> idsAveria) thr
 		PreparedStatement pst = null;
 		
 		try {
-			pst = connection.prepareStatement(SQL_UPDATE_IMPORTE_AVERIA);
+			pst = connection.prepareStatement(Queries.SQL_UPDATE_IMPORTE_AVERIA);
 			pst.setDouble(1, totalAveria);
 			pst.setLong(2, idAveria);
 			pst.executeUpdate();
@@ -253,7 +233,7 @@ private void vincularAveriasConFactura(long idFactura, List<Long> idsAveria) thr
 		ResultSet rs = null;
 		
 		try {
-			pst = connection.prepareStatement(SQL_IMPORTE_REPUESTOS);
+			pst = connection.prepareStatement(Queries.SQL_IMPORTE_REPUESTOS);
 			pst.setLong(1, idAveria);
 			
 			rs = pst.executeQuery();
@@ -274,7 +254,7 @@ private void vincularAveriasConFactura(long idFactura, List<Long> idsAveria) thr
 		ResultSet rs = null;
 		
 		try {
-			pst = connection.prepareStatement(SQL_IMPORTE_MANO_OBRA);
+			pst = connection.prepareStatement(Queries.SQL_IMPORTE_MANO_OBRA);
 			pst.setLong(1, idAveria);
 			
 			rs = pst.executeQuery();

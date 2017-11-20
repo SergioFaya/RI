@@ -7,10 +7,11 @@ import java.sql.SQLException;
 
 import alb.util.console.Console;
 import alb.util.jdbc.Jdbc;
+import uo.ri.conf.properties.Queries;
 
 public class AddMechanic {
 
-	private static String SQL = "insert into TMecanicos(nombre, apellidos) values (?, ?)";
+	
 	private String nombre;
 	private String apellidos;
 	
@@ -28,7 +29,7 @@ public class AddMechanic {
 		try {
 			c = Jdbc.getConnection();
 			
-			pst = c.prepareStatement(SQL);
+			pst = c.prepareStatement(Queries.SQL_INSERT_INTO_MECANICOS);
 			pst.setString(1, nombre);
 			pst.setString(2, apellidos);
 			

@@ -7,10 +7,9 @@ import java.sql.SQLException;
 
 import alb.util.console.Console;
 import alb.util.jdbc.Jdbc;
+import uo.ri.conf.properties.Queries;
 
 public class DeleteMechanic {
-
-	private static String SQL = "delete from TMecanicos where id = ?";
 	
 	private long idMecanico;
 	
@@ -26,7 +25,7 @@ public class DeleteMechanic {
 		try {
 			c = Jdbc.getConnection();
 			
-			pst = c.prepareStatement(SQL);
+			pst = c.prepareStatement(Queries.SQL_DELETE_FROM_MECANICOS);
 			pst.setLong(1, idMecanico);
 			
 			pst.executeUpdate();
