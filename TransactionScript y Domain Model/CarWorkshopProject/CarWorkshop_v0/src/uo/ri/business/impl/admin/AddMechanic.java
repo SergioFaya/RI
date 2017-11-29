@@ -34,7 +34,7 @@ public class AddMechanic {
 			pst.setString(2, apellidos);
 			
 			MechanicGateway gate = PersistenceFactory.getMechanicGateway(); 
-			gate.setConection(c);
+			gate.setConnection(c);
 			gate.addMechanic(pst);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

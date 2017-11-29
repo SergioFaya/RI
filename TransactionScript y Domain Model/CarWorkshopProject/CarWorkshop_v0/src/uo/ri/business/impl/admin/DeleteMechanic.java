@@ -29,7 +29,7 @@ public class DeleteMechanic {
 			pst = c.prepareStatement(Conf.get("SQL_DELETE_FROM_MECANICOS"));
 			pst.setLong(1, idMecanico);
 			MechanicGateway gate = PersistenceFactory.getMechanicGateway();
-			gate.setConection(c);
+			gate.setConnection(c);
 			gate.deleteMechanic(pst);
 			
 		} catch (SQLException e) {

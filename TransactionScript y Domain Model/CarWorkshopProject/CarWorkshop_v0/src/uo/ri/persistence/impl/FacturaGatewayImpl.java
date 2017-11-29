@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import alb.util.jdbc.Jdbc;
-import uo.ri.persistence.FacturaGateway;
+import uo.ri.persistence.FacturasGateway;
 
-public class FacturaGatewayImpl implements FacturaGateway {
+public class FacturaGatewayImpl implements FacturasGateway {
 
 	private Connection con;
 	private ResultSet rs;

@@ -16,7 +16,7 @@ import uo.ri.common.BusinessException;
 import uo.ri.conf.Conf;
 import uo.ri.conf.PersistenceFactory;
 import uo.ri.persistence.AveriaGateway;
-import uo.ri.persistence.FacturaGateway;
+import uo.ri.persistence.FacturasGateway;
 
 public class CreateInvoiceFor {
 
@@ -27,8 +27,28 @@ public class CreateInvoiceFor {
 	public CreateInvoiceFor(List<Long> idsAveria) {
 		this.idsAveria = idsAveria;
 	}
-
+	private void prepareDB() throws SQLException {
+		connection = Jdbc.getConnection();
+		connection.setAutoCommit(false);
+		PersistenceFactory.getFacturaGateway().setConnection(connection);
+		PersistenceFactory.getAveriasGateway().setConnection(connection);
+		
+	}
 	public Map<String, Object> execute() throws BusinessException {
+		/*
+		 prepareDB void
+		 cargarAverias(List<long>) list<map<string,object>>
+		 verificarAveriasTerminadas(list<map<string,object>>) void
+		 calcularDatosParaFactura(list<map<string,object>>) map<String,Object>
+		 save(Map<string,Object>) long
+		 actualizarAverias(list<map<string,object>>,long) void
+		 commit() void
+		 rollback() void
+		 rollback() void
+		 rollback() void
+		 close(connection) void 
+		 */
+		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		try {
 			connection = Jdbc.getConnection();
@@ -140,7 +160,7 @@ public class CreateInvoiceFor {
 		pst.setDouble(3, iva);
 		pst.setDouble(4, totalConIva);
 		pst.setString(5, "SIN_ABONAR");
-		FacturaGateway gate = PersistenceFactory.getFacturaGateway();
+		FacturasGateway gate = PersistenceFactory.getFacturaGateway();
 		gate.setConnection(connection);
 		gate.insertarFactura(pst);
 
@@ -154,7 +174,7 @@ public class CreateInvoiceFor {
 
 		pst = connection.prepareStatement(Conf.get("SQL_RECUPERAR_CLAVE_GENERADA"));
 		pst.setLong(1, numeroFactura);
-		FacturaGateway gate = PersistenceFactory.getFacturaGateway();
+		FacturasGateway gate = PersistenceFactory.getFacturaGateway();
 		gate.setConnection(connection);
 		gate.setResultSet(rs);
 		gate.recuperarClaveFacturaGenerada(pst);
@@ -168,7 +188,7 @@ public class CreateInvoiceFor {
 
 		try {
 			pst = connection.prepareStatement(Conf.get("SQL_ULTIMO_NUMERO_FACTURA"));
-			FacturaGateway gate = PersistenceFactory.getFacturaGateway();
+			FacturasGateway gate = PersistenceFactory.getFacturaGateway();
 			gate.setConnection(connection);
 			gate.setResultSet(rs);
 			gate.ultimoNumeroFactura(pst);

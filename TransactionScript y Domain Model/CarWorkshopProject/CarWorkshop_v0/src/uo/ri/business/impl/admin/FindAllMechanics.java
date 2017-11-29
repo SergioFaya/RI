@@ -26,7 +26,7 @@ public class FindAllMechanics {
 			c = Jdbc.getConnection();
 			pst = c.prepareStatement(Conf.get("SELECT_ALL_FROM_MECANICOS"));
 			MechanicGateway gate = PersistenceFactory.getMechanicGateway();
-			gate.setConection(c);
+			gate.setConnection(c);
 			gate.setResultSet(rs);
 			gate.findAllMechanics(pst);
 			while(rs.next()) {

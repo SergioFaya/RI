@@ -8,6 +8,12 @@ import java.io.InputStreamReader;
 import org.apache.commons.compress.compressors.CompressorInputStream;
 import org.apache.commons.compress.compressors.CompressorStreamFactory;
 
+import io.netty.handler.codec.AsciiHeadersEncoder.NewlineType;
+import twitter4j.TweetEntity;
+import twitter4j.Twitter;
+import twitter4j.TwitterFactory;
+import twitter4j.TwitterResponse;
+
 public class UtilReader {
 
 	public void parserito(String path) {
@@ -20,8 +26,11 @@ public class UtilReader {
 				line = reader.readLine();
 			}
 		} catch (Exception e) {
-			System.err.println("ERROR EN LA LECTURA");
+			System.err.println("ERROR EN IO");
 		}
+		
+		Twitter twitter = TwitterFactory.getSingleton();
+		
 	}
 
 }

@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public interface FacturaGateway {
+public interface FacturasGateway {
 	
 	void insertarFactura(PreparedStatement pst);
 

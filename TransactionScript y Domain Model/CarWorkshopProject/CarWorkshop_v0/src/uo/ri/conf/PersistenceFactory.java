@@ -1,7 +1,7 @@
 package uo.ri.conf;
 
 import uo.ri.persistence.AveriaGateway;
-import uo.ri.persistence.FacturaGateway;
+import uo.ri.persistence.FacturasGateway;
 import uo.ri.persistence.ManoDeObraGateway;
 import uo.ri.persistence.MechanicGateway;
 import uo.ri.persistence.RepuestoGateway;
@@ -21,7 +21,7 @@ public class PersistenceFactory {
 		return new AveriaGatewayImpl();
 	}
 
-	public static FacturaGateway getFacturaGateway() {
+	public static FacturasGateway getFacturaGateway() {
 		return new FacturaGatewayImpl();
 	}
 

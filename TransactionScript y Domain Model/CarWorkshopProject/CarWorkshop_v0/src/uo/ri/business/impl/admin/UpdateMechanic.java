@@ -35,7 +35,7 @@ public class UpdateMechanic {
 			pst.setLong(3, id);
 
 			MechanicGateway gate = new MechanicGatewayImpl();
-			gate.setConection(c);
+			gate.setConnection(c);
 			gate.updateMechanic(pst);
 
 		} catch (SQLException e) {
