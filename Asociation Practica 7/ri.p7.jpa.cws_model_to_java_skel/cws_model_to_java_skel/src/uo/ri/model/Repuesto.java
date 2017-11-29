@@ -1,11 +1,15 @@
 package uo.ri.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Repuesto {
 
 	private String codigo;
 	private String descripcion;
 	private double precio;
-
+	private Set<Sustitucion> sustituciones = new HashSet<>();
+	
 	public Repuesto(String codigo) {
 		super();
 		this.codigo = codigo;
@@ -15,6 +19,14 @@ public class Repuesto {
 		this(codigo);
 		this.descripcion = descripcion;
 		this.precio = precio;
+	}
+	
+	Set<Sustitucion> _getSustituciones() {
+		return sustituciones;
+	}
+	
+	public Set<Sustitucion> getSustituciones() {
+		return new HashSet<>(sustituciones);
 	}
 
 	public String getDescripcion() {

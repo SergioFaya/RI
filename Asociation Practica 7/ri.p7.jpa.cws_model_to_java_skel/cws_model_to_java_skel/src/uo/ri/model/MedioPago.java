@@ -9,10 +9,7 @@ public abstract class MedioPago {
 	protected double acumulado = 0.0;
 
 	protected Set<Cargo> cargos = new HashSet<>();
-	
-	
-	
-	
+		
 	Set<Cargo> _getCargos() {
 		return cargos;
 	}

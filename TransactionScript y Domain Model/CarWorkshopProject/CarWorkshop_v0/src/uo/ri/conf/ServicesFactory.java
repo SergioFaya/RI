@@ -11,10 +11,6 @@ public class ServicesFactory {
 	
 	//MechanicService mechanicServise = new MechanicServiceImpl();
 	//ForemanService foremanService = new ForemanServiceImpl();
-	
-	public ServicesFactory() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public static AdminService getAdminService() {
 		return new AdminServiceImpl();
