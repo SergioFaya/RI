@@ -1,20 +1,18 @@
 package uo.ri.persistence;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.util.List;
+import java.util.Map;
 
 public interface MechanicGateway {
 	
 	void setConnection(Connection con);
+	
+	void addMechanic(Map<String, Object> map);
+	
+	void deleteMechanic(Map<String,Object> map);
 
-	void setResultSet(ResultSet rs);
+	List<Map<String,Object>> findAllMechanics();
 	
-	void addMechanic(PreparedStatement pst);
-	
-	void deleteMechanic(PreparedStatement pst);
-
-	void findAllMechanics(PreparedStatement pst);
-	
-	void updateMechanic(PreparedStatement pst);	
+	void updateMechanic(Map<String,Object> map);	
 }

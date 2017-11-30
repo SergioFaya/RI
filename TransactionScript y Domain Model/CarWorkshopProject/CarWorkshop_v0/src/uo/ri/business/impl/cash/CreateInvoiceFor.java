@@ -51,9 +51,7 @@ public class CreateInvoiceFor {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		try {
-			connection = Jdbc.getConnection();
-			connection.setAutoCommit(false);
-
+			prepareDB();
 			verificarAveriasTerminadas(idsAveria);
 
 			long numeroFactura = generarNuevoNumeroFactura();

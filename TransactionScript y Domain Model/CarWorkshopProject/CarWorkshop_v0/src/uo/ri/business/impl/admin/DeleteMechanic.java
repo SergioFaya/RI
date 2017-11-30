@@ -1,39 +1,39 @@
 package uo.ri.business.impl.admin;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 import alb.util.console.Console;
 import alb.util.jdbc.Jdbc;
-import uo.ri.conf.Conf;
 import uo.ri.conf.PersistenceFactory;
 import uo.ri.persistence.MechanicGateway;
 
 public class DeleteMechanic {
-	
+
 	private long idMecanico;
-	
+
 	public DeleteMechanic(long idMecanico) {
 		this.idMecanico = idMecanico;
 	}
-	
+
 	public void execute() {
 		Connection c = null;
-		PreparedStatement pst = null;
-		//ResultSet rs = null;
-
 		try {
 			c = Jdbc.getConnection();
-			
-			pst = c.prepareStatement(Conf.get("SQL_DELETE_FROM_MECANICOS"));
-			pst.setLong(1, idMecanico);
+
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("idMecanico", idMecanico);
+
 			MechanicGateway gate = PersistenceFactory.getMechanicGateway();
 			gate.setConnection(c);
-			gate.deleteMechanic(pst);
-			
+			gate.deleteMechanic(map);
+
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
+		} finally {
+			Jdbc.close(c);
 		}
 		Console.println("Se ha eliminado el mecánico");
 

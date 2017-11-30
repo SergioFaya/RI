@@ -1,12 +1,12 @@
 package uo.ri.business.impl.admin;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 import alb.util.console.Console;
 import alb.util.jdbc.Jdbc;
-import uo.ri.conf.Conf;
 import uo.ri.conf.PersistenceFactory;
 import uo.ri.persistence.MechanicGateway;
 
@@ -23,21 +23,21 @@ public class AddMechanic {
 	public void execute() {
 		// Procesar
 		Connection c = null;
-		PreparedStatement pst = null;
-		//ResultSet rs = null;
-
 		try {
 			c = Jdbc.getConnection();
-
-			pst = c.prepareStatement(Conf.get("SQL_INSERT_INTO_MECANICOS"));
-			pst.setString(1, nombre);
-			pst.setString(2, apellidos);
 			
-			MechanicGateway gate = PersistenceFactory.getMechanicGateway(); 
+			Map<String, Object> map = new HashMap<String,Object>();
+			map.put("nombre", nombre);
+			map.put("apellidos", apellidos);
+			
+			MechanicGateway gate = PersistenceFactory.getMechanicGateway();
 			gate.setConnection(c);
-			gate.addMechanic(pst);
+			gate.addMechanic(map);
+			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
+		} finally {
+			Jdbc.close(c);
 		}
 		// Mostrar resultado
 		Console.println("Nuevo mecánico añadido");
