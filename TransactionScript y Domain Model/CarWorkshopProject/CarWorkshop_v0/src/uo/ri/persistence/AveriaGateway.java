@@ -1,20 +1,19 @@
 package uo.ri.persistence;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.util.Map;
+
+import uo.ri.common.BusinessException;
 
 public interface AveriaGateway {
 	
 	void setConnection(Connection con);
-
-	void setResultSet(ResultSet rs);
 	
-	void verificarEstadoAverias(PreparedStatement pst);
+	void verificarEstadoAverias(Map<String,Object> map) throws BusinessException;
 	
-	void actualizarEstadoAverias(PreparedStatement pst);
+	void actualizarEstadoAverias(Map<String,Object> map) throws BusinessException;
 	
-	void vincularAveriasConFactura(PreparedStatement pst);
+	void vincularAveriasConFactura(Map<String,Object> map) throws BusinessException;
 	
-	void updateImporteAveria(PreparedStatement pst);
+	void updateImporteAveria(Map<String,Object> map) throws BusinessException;
 }

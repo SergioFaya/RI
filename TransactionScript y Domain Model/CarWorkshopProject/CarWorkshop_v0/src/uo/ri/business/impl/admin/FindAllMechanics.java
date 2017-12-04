@@ -11,7 +11,7 @@ import uo.ri.persistence.MechanicGateway;
 
 public class FindAllMechanics {
 
-	@SuppressWarnings({ "unchecked", "null" })
+
 	public List<Map<String, Object>> execute() {
 		Connection c = null;
 

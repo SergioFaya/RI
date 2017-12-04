@@ -1,18 +1,15 @@
 package uo.ri.persistence;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.util.Map;
 
 public interface FacturasGateway {
 	
-	void insertarFactura(PreparedStatement pst);
+	void insertarFactura(Map<String,Object> map);
 
-	void recuperarClaveFacturaGenerada(PreparedStatement pst);
+	Map<String,Object> recuperarClaveFacturaGenerada(Map<String,Object> map);
 
-	void ultimoNumeroFactura(PreparedStatement pst);
+	Map<String, Object> ultimoNumeroFactura();
 
 	void setConnection(Connection con);
-
-	void setResultSet(ResultSet rs);
 }

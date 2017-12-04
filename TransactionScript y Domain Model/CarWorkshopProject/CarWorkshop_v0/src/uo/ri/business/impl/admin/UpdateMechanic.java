@@ -1,11 +1,11 @@
 package uo.ri.business.impl.admin;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 import alb.util.jdbc.Jdbc;
-import uo.ri.conf.Conf;
 import uo.ri.persistence.MechanicGateway;
 import uo.ri.persistence.impl.MechanicGatewayImpl;
 
@@ -24,19 +24,18 @@ public class UpdateMechanic {
 	public void execute() {
 		// Procesar
 		Connection c = null;
-		PreparedStatement pst = null;
 
 		try {
 			c = Jdbc.getConnection();
 
-			pst = c.prepareStatement(Conf.get("SQL_UPDATE_MECANICOS"));
-			pst.setString(1, nombre);
-			pst.setString(2, apellidos);
-			pst.setLong(3, id);
+			Map<String, Object> map = new HashMap<>();
+			map.put("nombre", nombre);
+			map.put("apellidos", apellidos);
+			map.put("id", id);
 
 			MechanicGateway gate = new MechanicGatewayImpl();
 			gate.setConnection(c);
-			gate.updateMechanic(pst);
+			gate.updateMechanic(map);
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

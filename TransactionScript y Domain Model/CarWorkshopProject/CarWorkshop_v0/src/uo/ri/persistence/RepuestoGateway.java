@@ -1,14 +1,11 @@
 package uo.ri.persistence;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.util.Map;
 
 public interface RepuestoGateway {
 	
-	void selectImporteRepuestos(PreparedStatement pst);
+	Map<String,Object> selectImporteRepuestos(Map<String,Object> map);
 
 	void setConnection(Connection con);
-
-	void setResultSet(ResultSet rs);
 }
